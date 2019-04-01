@@ -3,6 +3,20 @@ import java.util.Scanner;
 
 public class AlgoritmosGrupoA {
 
+   public static void suma10Cantidades(){
+       int inc=1;//Definir Variables e inicialiar valores
+       double numX, sumT=0;
+       //Proceso
+       Scanner leer=new Scanner(System.in);
+       while(inc<=10){
+           System.out.println("Ingrese el valor de la Posición: "+inc);
+           numX=leer.nextDouble();
+           sumT=sumT+numX;
+           inc++;
+       }
+    System.out.println("La suma de los 10 valores ingresados es:"+sumT);
+   }
+    
     public static void main(String[] args) {
         // Definir Variables segun tipo de datos
         int ti=0;//Inicializando Valores
