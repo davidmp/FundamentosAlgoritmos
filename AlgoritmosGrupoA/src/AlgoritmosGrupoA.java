@@ -17,7 +17,7 @@ public class AlgoritmosGrupoA {
     System.out.println("La suma de los 10 valores ingresados es:"+sumT);
    }
     
-    public static void main(String[] args) {
+    public static void cobroPorLlamada(){
         // Definir Variables segun tipo de datos
         int ti=0;//Inicializando Valores
         String di,tu;
@@ -58,8 +58,11 @@ public class AlgoritmosGrupoA {
         System.out.println("La llamada se realizó en el día: "+di);
         System.out.println("La llamada fue en Turno: "+tu);
         
-        
-        
+           
+   }
+    public static void main(String[] args) {
+
+
     }
     
 }
