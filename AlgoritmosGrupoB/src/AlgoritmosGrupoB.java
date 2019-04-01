@@ -29,7 +29,29 @@ public class AlgoritmosGrupoB {
         }
         System.out.println("La suma de todos los numeros es:"+sumt);
     }
-    
+    public static void sumaCantidadesOpcion2(){
+        int cont=1;
+        double num, sumt=0;
+        Scanner leer=new Scanner(System.in);
+        do{
+            System.out.println("Ingrese el numero de la Posición "+cont);
+            num=leer.nextDouble();
+            sumt=sumt+num;
+            cont++;
+        }while(cont<=10);
+        System.out.println("La suma de todos los numeros es:"+sumt);
+    }
+    public static void sumaCantidadesOpcion3(){
+        double num, sumt=0;
+        Scanner leer=new Scanner(System.in);
+        for(int cont=1; cont<=10;cont++){
+            System.out.println("Ingrese el numero de la Posición "+cont);
+            num=leer.nextDouble();
+            sumt=sumt+num;            
+        }
+        System.out.println("La suma de todos los numeros es:"+sumt);
+    }
+
     public static void costoPorLlamada(){
         // Definir variables segun tipo de datos
         int ti;
@@ -80,9 +102,12 @@ public class AlgoritmosGrupoB {
         while (opcion!=0){            
             switch(opcion){
              case 1: { sumaCantidades(); break; }
-             case 2: { costoPorLlamada(); break;}             
-                default:{System.out.println("Opción no Valida"); break;}
+             case 2: { costoPorLlamada(); break;}   
+             case 3: { sumaCantidadesOpcion2(); break;}
+             case 4: { sumaCantidadesOpcion3(); break;}
+             default:{System.out.println("Opción no Valida"); break;}
             }
+
             System.out.println("Ingrese el numero de algoritmo que desea probar:");
             opcion=leer.nextInt();
         }               
