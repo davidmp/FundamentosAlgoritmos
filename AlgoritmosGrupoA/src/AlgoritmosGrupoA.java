@@ -60,9 +60,20 @@ public class AlgoritmosGrupoA {
         
            
    }
+    
     public static void main(String[] args) {
-
-
+        System.out.println("INGRESE LA OPCIÓN DEL ALGORITMO QUE DESEA PROBAR");
+        Scanner leer=new Scanner(System.in);
+        int opcion =leer.nextInt();
+        while (opcion!=0) {            
+            switch(opcion){
+            case 1: cobroPorLlamada(); break;
+            case 2: suma10Cantidades();break;
+            default: System.out.println("Opción Inválida!!");break;
+            }  
+            System.out.println("INGRESE LA OPCIÓN DEL ALGORITMO QUE DESEA PROBAR");            
+            opcion =leer.nextInt();
+        }
     }
     
 }
