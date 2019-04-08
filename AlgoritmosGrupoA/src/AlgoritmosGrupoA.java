@@ -16,6 +16,30 @@ public class AlgoritmosGrupoA {
        }
     System.out.println("La suma de los 10 valores ingresados es:"+sumT);
    }
+   
+   public static void sumaCantidadForma2(){
+        int inc=1; 
+        double numX, sumT=0;
+        Scanner leer=new Scanner(System.in);
+        do{
+          System.out.println("Ingrese el numero de la posicion "+inc);
+          numX=leer.nextDouble();
+          sumT=sumT+numX;
+          inc++;
+          
+        } while(inc<=10);
+        System.out.println("La suma de los numeros es:"+sumT);
+   }
+   public static void sumaCantidadForma3(){
+       double numX, sumT=0;
+       Scanner leer=new Scanner(System.in);
+       for(int inc=1;inc<=10;inc++){
+       System.out.println("Ingrese el numero de la posicion "+inc);
+       numX=leer.nextDouble();
+       sumT=sumT+numX;
+       }
+       System.out.println("La suma de los numeros es: "+sumT);
+   }
     
     public static void cobroPorLlamada(){
         // Definir Variables segun tipo de datos
@@ -57,8 +81,7 @@ public class AlgoritmosGrupoA {
         System.out.println("Total a pagar es:"+tp);
         System.out.println("La llamada se realizó en el día: "+di);
         System.out.println("La llamada fue en Turno: "+tu);
-        
-           
+                 
    }
     
     public static void main(String[] args) {
@@ -69,6 +92,8 @@ public class AlgoritmosGrupoA {
             switch(opcion){
             case 1: cobroPorLlamada(); break;
             case 2: suma10Cantidades();break;
+            case 3: sumaCantidadForma2(); break;
+            case 4: sumaCantidadForma3(); break;
             default: System.out.println("Opción Inválida!!");break;
             }  
             System.out.println("INGRESE LA OPCIÓN DEL ALGORITMO QUE DESEA PROBAR");            
