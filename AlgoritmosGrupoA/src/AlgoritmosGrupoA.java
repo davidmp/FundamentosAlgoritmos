@@ -40,6 +40,14 @@ public class AlgoritmosGrupoA {
        }
        System.out.println("La suma de los numeros es: "+sumT);
    }
+   public static void tablaMultiplicar1a9(){
+       for (int inicio = 1; inicio <=10; inicio++) {
+           for (int numi = 1; numi <=10; numi++) {
+              System.out.println(inicio+"*"+numi+"="+(inicio*numi)); 
+           }
+           System.out.println("\n");
+       }
+   }
     
     public static void cobroPorLlamada(){
         // Definir Variables segun tipo de datos
@@ -94,6 +102,7 @@ public class AlgoritmosGrupoA {
             case 2: suma10Cantidades();break;
             case 3: sumaCantidadForma2(); break;
             case 4: sumaCantidadForma3(); break;
+            
             default: System.out.println("Opción Inválida!!");break;
             }  
             System.out.println("INGRESE LA OPCIÓN DEL ALGORITMO QUE DESEA PROBAR");            
