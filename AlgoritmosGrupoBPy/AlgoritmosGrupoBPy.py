@@ -1,6 +1,6 @@
 def sumaCantidades():
-    global cont, num, sumt
-    cont=0
+    global cont, num, sumt #global: es para definir el tipo de funcionamiento de la varibale en todo el archivo
+    cont=0 #inicializando valores
     sumt=0
     while(cont<10):
         num=int(input(f"Ingrese el numero de la poscion {cont}"))
