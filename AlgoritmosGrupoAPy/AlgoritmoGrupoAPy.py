@@ -7,5 +7,6 @@ def suma10Cantidades():
         sumT=sumT+numX
         inc=inc+1
     print("La suma de los 10 valores ingresados es:", sumT)
+    print(f"La suma de los 10 valores ingresados es: {sumT}")
     
 suma10Cantidades()
