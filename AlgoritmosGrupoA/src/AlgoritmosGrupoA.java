@@ -92,6 +92,30 @@ public class AlgoritmosGrupoA {
                  
    }
     
+    public static void numMayoresYMenorCero(){
+    Scanner leer=new Scanner(System.in);
+    int contador=1;
+    int mayorCero=0, menorCero=0;
+    int numX;
+        System.out.println("Defina la cantidad de numeros a Ingresar: ");
+        int cantNum=leer.nextInt();
+        while (contador<=cantNum) {            
+         System.out.println("Ingrese el numero de la posicion "+contador+":" );
+         numX=leer.nextInt();
+        if(numX<0){
+        menorCero++;
+        }else{
+        mayorCero++;
+        }
+        contador++;
+        }
+        System.out.println("\n La cantidade numeros menores a cero son:"+menorCero);
+        System.out.println("\n La cantidade numeros mayores o iguales a cero son:"+mayorCero);
+    }
+    
+    
+    
+    
     public static void main(String[] args) {
         System.out.println("INGRESE LA OPCIÓN DEL ALGORITMO QUE DESEA PROBAR");
         Scanner leer=new Scanner(System.in);
@@ -102,6 +126,7 @@ public class AlgoritmosGrupoA {
             case 2: suma10Cantidades();break;
             case 3: sumaCantidadForma2(); break;
             case 4: sumaCantidadForma3(); break;
+            case 5: numMayoresYMenorCero(); break;
             
             default: System.out.println("Opción Inválida!!");break;
             }  

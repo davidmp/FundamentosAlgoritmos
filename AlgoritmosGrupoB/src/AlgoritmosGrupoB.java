@@ -16,7 +16,43 @@ public class AlgoritmosGrupoB {
     /**
      * @param args the command line arguments
      */
+    public static void determiarSueldoSemanalTrabaj(){
+    int horasT, cantTrabajador;
+    double sueldoH,sueldoSemanal, sueldoBruto=0;
+    String nombreT;
+    Scanner leer=new Scanner(System.in);
     
+    System.out.println("Ingrese la Cantidad de Trabajadores :");
+    cantTrabajador=leer.nextInt();
+    
+    for(int cont=1; cont<=cantTrabajador; cont++){
+        System.out.println("Ingrese el nombre del Trabajador "+cont+":");
+        nombreT=leer.next();
+        do{
+        System.out.println("Ingrese la cantidad de horas trabajadas x semana del trabajador "+cont+":");
+        horasT=leer.nextInt();
+        }while(horasT<=0 || horasT>40);        
+        System.out.println("Ingrese el sueldo x hora del trabajador "+cont+":");
+        sueldoH=leer.nextDouble(); 
+        sueldoBruto=sueldoH*horasT;
+        
+        if(sueldoBruto<150){
+        sueldoSemanal=sueldoBruto-sueldoBruto*0.05;
+        }else if(sueldoBruto>=150 && sueldoBruto<300){
+        sueldoSemanal=sueldoBruto-sueldoBruto*0.07;
+        }else if(sueldoBruto>=300 && sueldoBruto<450){
+        sueldoSemanal=sueldoBruto-sueldoBruto*0.09;
+        }else{
+        sueldoSemanal=sueldoBruto;
+        }        
+        System.out.println("Nombre de Trabajador "+cont+" :"+nombreT);
+        System.out.println("Horas trabajadas del Trabajador "+cont+" :"+horasT);
+        System.out.println("Sueldo x Hora del Trabajador "+cont+" :"+sueldoH);
+        System.out.println("El sueldo Semanal del trabajador "+cont+" :"+sueldoSemanal);
+        System.out.println("");
+    }
+    
+    }
     public static void sumaCantidades(){
         int cont=1;//Inicializando valores
         double num,sumt=0;
@@ -105,6 +141,7 @@ public class AlgoritmosGrupoB {
              case 2: { costoPorLlamada(); break;}   
              case 3: { sumaCantidadesOpcion2(); break;}
              case 4: { sumaCantidadesOpcion3(); break;}
+             case 5: { determiarSueldoSemanalTrabaj(); break;}
              default:{System.out.println("Opción no Valida"); break;}
             }
 
