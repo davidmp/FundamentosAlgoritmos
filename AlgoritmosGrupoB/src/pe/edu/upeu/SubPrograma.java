@@ -12,7 +12,7 @@ import java.util.Scanner;
  * @author Docente
  */
 public class SubPrograma {
-    Scanner leer;//Variable Global
+   static Scanner leer;//Variable Global
     
     //Funcion o Metodo para calcular el factorial de X numero
     int factorial(int numero){
@@ -32,7 +32,14 @@ public class SubPrograma {
     
     
     public static void main(String[] args) {
-        
+        SubPrograma sp=new SubPrograma();//definiendo Objeto de SubPrograma
+        System.out.println("Ingres el rango de numeros para calcular el Factorial");
+        System.out.print("Ingrese el Primer numero:");
+        leer=new Scanner(System.in);//definiendo un Objeto
+        int numI=leer.nextInt();
+        System.out.print("\nIngrese el numero Final:");
+        int numF=leer.nextInt();
+        sp.calcFactRangoNum(numI, numF);
     }
     
 }
