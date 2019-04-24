@@ -68,10 +68,8 @@ public class SubPrograma {
         SubPrograma sp=new SubPrograma();//sp esun Objeto de la Clase SubPrograma
         sp.calcFactRangoNum(numI, numF);                
         
-        BufferedReader br = new BufferedReader(new 
-        InputStreamReader(System.in)); //Ya tenemos el "lector"        
-        System.out.println("Ingrese el nombre:");
-        String nombre=br.readLine();
+        LeerTeclado br=new LeerTeclado();             
+        String nombre=br.leer("", "Ingrese el nombre:");
         System.out.println("El nombre es:"+nombre);
                 
     }
