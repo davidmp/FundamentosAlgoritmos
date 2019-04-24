@@ -5,15 +5,15 @@
  */
 package pe.edu.upeu;
 
+
+import java.io.IOException;
 import java.math.BigInteger;
-import java.util.Scanner;
 
 /**
  *
  * @author Docente
  */
-public class SubPrograma {
-   static Scanner leer;//Variable Global
+public class SubPrograma {   
     
     //Funcion o Metodo para calcular el factorial de X numero
     int factorial(int numero){
@@ -56,15 +56,17 @@ public class SubPrograma {
     }
     
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         SubPrograma sp=new SubPrograma();//definiendo Objeto de SubPrograma
-        System.out.println("Ingres el rango de numeros para calcular el Factorial");
-        System.out.print("Ingrese el Primer numero:");
-        leer=new Scanner(System.in);//definiendo un Objeto
-        int numI=leer.nextInt();
-        System.out.print("\nIngrese el numero Final:");
-        int numF=leer.nextInt();
+        LeetTeclado br=new LeetTeclado();        
+        System.out.println("Ingres el rango de numeros para calcular el Factorial");       
+        int numI=br.leer(0, "Ingrese el Primer numero:");        
+        int numF=br.leer(0, "Ingrese el numero Final:");
         sp.calcFactRangoNum(numI, numF);
+                                
+        String nombre =br.leer("", "Coloque su nombre:");
+        System.out.println("El nombre es:"+nombre);
+        
     }
     
 }

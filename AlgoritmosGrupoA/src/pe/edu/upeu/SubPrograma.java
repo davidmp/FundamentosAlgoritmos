@@ -5,9 +5,8 @@
  */
 package pe.edu.upeu;
 
-import java.io.BufferedReader;
+
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.math.BigInteger;
 import java.util.Scanner;
 
@@ -60,15 +59,15 @@ public class SubPrograma {
     }
     
     public static void main(String[] args) throws IOException {
+        LeerTeclado br=new LeerTeclado();             
         System.out.println("Ingrese un Rango de Numeros");
-        System.out.print("Ingrese el Primer numero:");
-        int numI=leer.nextInt();
-        System.out.print("\nIngrese el numero Final:");
-        int numF=leer.nextInt();        
+                
+        int numI=br.leer(0, "Ingrese el Primer numero:");        
+        int numF=br.leer(0, "Ingrese el numero Final:");       
         SubPrograma sp=new SubPrograma();//sp esun Objeto de la Clase SubPrograma
         sp.calcFactRangoNum(numI, numF);                
         
-        LeerTeclado br=new LeerTeclado();             
+        
         String nombre=br.leer("", "Ingrese el nombre:");
         System.out.println("El nombre es:"+nombre);
                 

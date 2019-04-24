@@ -13,6 +13,7 @@ import java.io.InputStreamReader;
  *
  * @author Docente
  */
+//Clase que continen sobre carga de metodos
 public class LeerTeclado {
     BufferedReader br = new BufferedReader(new 
     InputStreamReader(System.in));    
