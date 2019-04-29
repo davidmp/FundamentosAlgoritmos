@@ -24,6 +24,8 @@ public class SubPrograma {
         }
     return result;
     }
+    
+    
     long factorialLong(int numero){
     long contador=1;
     long result=1;//definir variable local
@@ -65,6 +67,7 @@ public class SubPrograma {
         sp.calcFactRangoNum(numI, numF);
                                 
         String nombre =br.leer("", "Coloque su nombre:");
+        
         System.out.println("El nombre es:"+nombre);
         
     }
