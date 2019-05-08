@@ -56,19 +56,31 @@ public class Busqueda {
         return posicion;
     }
     
-    
+    public int busquedaSecuencialR1(int vector[], int numero){
+        int cantidadNumRepitentes=0;
+        for (int i = 0; i < 8; i++) {
+            if(vector[i]==numero){
+                //cantidadNumRepitentes = cantidadNumRepitentes + 1;
+                //Si es IGUAL CANT ´cantidadNumRepitentes´ AUMENTA 1;
+                cantidadNumRepitentes++;
+            }
+        }
+        
+        return cantidadNumRepitentes;
+    }
     public static void main(String[] args) {
         busquedaSecuencial();        
         System.out.println("\n Segunda Forma:");
         Busqueda b=new Busqueda();        
         b.busquedaSecuencial1();   
         System.out.println("\n Tercera Forma:");
-        int vectorXX[]={1,6,3,4,20,10,14,4,6};        
+        int vectorXX[]={1,6,3,3,20,14,4,6};   //Numeros repetidos 2 el 3     
         b.busquedaSecuencial2(vectorXX);
         System.out.println("\n Cuarta Forma:");
         b.busquedaSecuencial3(vectorXX,4);
         System.out.println("\n Busqueda Secuencial:");
         System.out.println("El valor se encuentra en la Poscion:"+b.busquedaSecuencialR(vectorXX, 3));
+        System.out.println("Cantida de numeros: \t"+b.busquedaSecuencialR1(vectorXX, 3));
         
     }
     
