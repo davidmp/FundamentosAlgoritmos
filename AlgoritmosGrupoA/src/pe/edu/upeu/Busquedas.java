@@ -25,6 +25,20 @@ public class Busquedas {
   public int busquedaSecuencial4(int[] v, int posicion){  
     return v[posicion];
   }
+  public int busquedaSecuencial4Funcional(int[] v, int valorB){  
+      int posicion=0;
+      for (int i = 0; i < v.length; i++) {
+          if(v[i]==valorB){
+              System.out.println("Si existe");
+              posicion= i;
+              break;
+          }else{
+            System.out.println("No existe");           
+          }
+      }
+      return posicion;
+  }
+  
     public static void main(String[] args) {
         int[] vectorX={20,10,8,4,3,20,90, 14, 8};        
         Busquedas n=new Busquedas();
@@ -33,6 +47,8 @@ public class Busquedas {
         n.busquedaSecuencial2(vectorX);
         System.out.println("Tamaño de Vector es:"+n.busquedaSecuencial3(vectorX));
         System.out.println("El valor de la posicion:"+n.busquedaSecuencial4(vectorX, 3));        
+        System.out.println("\n");
+        System.out.println("El valor ingresado esta en posicion:"+n.busquedaSecuencial4Funcional(vectorX, 14));
     }
    
 }
