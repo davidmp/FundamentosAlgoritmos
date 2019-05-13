@@ -81,7 +81,31 @@ public class Busqueda {
         System.out.println("\n Busqueda Secuencial:");
         System.out.println("El valor se encuentra en la Poscion:"+b.busquedaSecuencialR(vectorXX, 3));
         System.out.println("Cantida de numeros: \t"+b.busquedaSecuencialR1(vectorXX, 3));
+        int vectorXXX[]={1,18,3,17,20,14,4,6};       
+        System.out.println("Metodo de Ordenacion x Insercion D");
+        b.imprimir(b.ordenacionXInsercionD(vectorXXX));
         
     }
+    
+    //Algoritmo de Ordenación
+    public int[] ordenacionXInsercionD(int[] vector){
+        int aux, j;
+        for (int i = 1; i < vector.length; i++) {
+            aux=vector[i];
+            j=i;
+            while (j>0 && aux<vector[j-1]) {                
+                vector[j]=vector[j-1]; 
+                j--;
+            }
+            vector[j]=aux;            
+        }        
+    return vector;
+    }
+    public void imprimir(int[] vector){
+        for (int i = 0; i < vector.length; i++) {
+            System.out.println("vector["+i+"]="+vector[i]);
+        }
+    }
+    
     
 }
