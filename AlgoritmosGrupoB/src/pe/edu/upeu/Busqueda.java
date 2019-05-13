@@ -68,6 +68,23 @@ public class Busqueda {
         
         return cantidadNumRepitentes;
     }
+    
+    public int busquedaBinaria(int[] vector, int valorB){
+    int encontrado=-1, primero=0, ultimo=vector.length-1;
+    while((primero<=ultimo) && (encontrado<0)){
+    int medio=(primero+ultimo)/2;
+    if(vector[medio]==valorB){
+        encontrado=medio;
+    }else if(vector[medio]<valorB){
+    primero=medio+1;
+    }else{
+    ultimo=medio-1;
+    }
+    }    
+        return encontrado;
+    }
+    
+    
     public static void main(String[] args) {
         busquedaSecuencial();        
         System.out.println("\n Segunda Forma:");
@@ -82,10 +99,14 @@ public class Busqueda {
         System.out.println("El valor se encuentra en la Poscion:"+b.busquedaSecuencialR(vectorXX, 3));
         System.out.println("Cantida de numeros: \t"+b.busquedaSecuencialR1(vectorXX, 3));
         int vectorXXX[]={1,18,3,17,20,14,4,6};       
-        System.out.println("Metodo de Ordenacion x Insercion D");
+        System.out.println("Metodo de Ordenacion x Insercion D");        
         b.imprimir(b.ordenacionXInsercionD(vectorXXX));
+        System.out.println("Metodo de Búsqueda Binaria");
+        System.out.println("Resultado B.binaria:"+b.busquedaBinaria(b.ordenacionXInsercionD(vectorXXX), 6));
+        
         
     }
+    
     
     //Algoritmo de Ordenación
     public int[] ordenacionXInsercionD(int[] vector){
