@@ -7,6 +7,8 @@ public class Mtriz {
     public static void main(String[] args) {
         Mtriz objeto = new Mtriz();
         objeto.ejercicio7_6();
+        objeto.imprimirMatriz(objeto.transformada01(5, 1));
+        
 }
         public void ejercicio7_4(){
             int matriz[][]= new int [3][3];
@@ -97,4 +99,27 @@ public class Mtriz {
             
         }
     
+       public int[][] transformada01(int dimension, int numInit){
+           int [][] matriz=new int[dimension][dimension];
+           for (int i = 0; i < matriz.length; i++) {
+               for (int j = 0; j < matriz[0].length; j++) {
+                   if(j<dimension-i){
+                   matriz[i][j]=numInit+(i+j)*(i+j+1)/2+i;
+                   }else{
+                   matriz[i][j]=-1;
+                   }
+               }
+           }
+           return matriz;
+       }
+       
+       public void imprimirMatriz(int[][] matriz){
+           for (int i = 0; i < matriz.length; i++) {
+               for (int j = 0; j < matriz[0].length; j++) {
+                   System.out.print(matriz[i][j]+"\t");
+               }
+               System.out.println("");
+           }       
+       }
+        
 }
