@@ -7,7 +7,9 @@ public class Mtriz {
     public static void main(String[] args) {
         Mtriz objeto = new Mtriz();
         objeto.ejercicio7_6();
-        objeto.imprimirMatriz(objeto.transformada01(5, 1));
+        objeto.imprimirMatriz(objeto.transformada01(5, 5));
+        System.out.println("");
+        objeto.imprimirMatriz(objeto.transformada05(5, 0));
         
 }
         public void ejercicio7_4(){
@@ -54,8 +56,7 @@ public class Mtriz {
                 System.out.print(vectorSumColum[i]+" ");
             }
             System.out.println("");
-        }
-        
+        }   
         public void ejercicio7_5(){
             int vector[] = new int [100];
             int tamVector, suma=0, media;
@@ -70,8 +71,7 @@ public class Mtriz {
             
             System.out.println("La suma es: " +suma);
             System.out.println("La media es: " +media);
-        }
-        
+        }       
         public void ejercicio7_6(){
             int vector[]= new int [60];
             int conCeros=0, conPos=0, conNeg=0;
@@ -97,8 +97,8 @@ public class Mtriz {
             System.out.println("Negativo: " + conNeg);
             
             
-        }
-    
+        } 
+        
        public int[][] transformada01(int dimension, int numInit){
            int [][] matriz=new int[dimension][dimension];
            for (int i = 0; i < matriz.length; i++) {
@@ -107,6 +107,19 @@ public class Mtriz {
                    matriz[i][j]=numInit+(i+j)*(i+j+1)/2+i;
                    }else{
                    matriz[i][j]=-1;
+                   }
+               }
+           }
+           return matriz;
+       }
+       public int[][] transformada05(int dimension, int numInit){
+           int [][] matriz=new int[dimension][dimension];           
+           for (int i = 0; i < matriz.length; i++) {
+               for (int j = dimension-1; j>=0; j--) {
+                   if(j+1<dimension-i){
+                   matriz[i][j]=-1;
+                   }else{
+                    matriz[i][j]=numInit++;
                    }
                }
            }
