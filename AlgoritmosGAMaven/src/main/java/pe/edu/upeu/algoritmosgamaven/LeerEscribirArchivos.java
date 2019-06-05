@@ -5,8 +5,12 @@
  */
 package pe.edu.upeu.algoritmosgamaven;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
 import java.net.URL;
 import java.util.Scanner;
 
@@ -63,13 +67,27 @@ public class LeerEscribirArchivos {
             System.out.println("");
         }
     }
-    
+    public void escribirArchivo(String[] head, int[][] data, String nameFile){
+        Writer out=null;
+        int contador=0;
+        try {
+        String url=System.class.getResource("/").getFile().replaceAll("%20", " ");
+            System.out.println("Ruta:"+url);
+            String[] urlReal=url.split("target");
+            out=new BufferedWriter(new OutputStreamWriter(
+                    new FileOutputStream(urlReal[0]+"src/main/resources/"+nameFile),"UTF-8"));
+            out.write("Hola mundo\n");
+        } catch (Exception e) {
+        }    
+    }
     public static void main(String[] args) {
         LeerEscribirArchivos lea=new LeerEscribirArchivos();//Objeto lea
         URL fileUrl=System.class.getResource("/02-exemplo7.txt");
         System.out.println("Ruta:"+fileUrl.getFile());
         System.out.println("Ruta real:"+fileUrl.getFile().replaceAll("%20", " "));
         lea.imprimirMatriz(lea.leerArchivo(new File(fileUrl.getFile().replaceAll("%20", " "))));        
+        System.out.println("Escribir Archivos");
+        lea.escribirArchivo(null, null, "archivo.txt");
     }
     
     
