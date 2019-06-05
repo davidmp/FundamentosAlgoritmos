@@ -71,7 +71,19 @@ public class LeerEscribirArchivos {
            }
            return matriz;
        }    
-    
+       public int[][] transformada05(int dimension, int numInit){
+           int [][] matriz=new int[dimension][dimension];           
+           for (int i = 0; i < matriz.length; i++) {
+               for (int j = dimension-1; j>=0; j--) {
+                   if(j+1<dimension-i){
+                   matriz[i][j]=-1;
+                   }else{
+                    matriz[i][j]=numInit++;
+                   }
+               }
+           }
+           return matriz;
+       }    
     public void escribirArchivo(String[] head, int[][] data, String nameFile){
         Writer out=null;
         try {
@@ -120,7 +132,7 @@ public class LeerEscribirArchivos {
         int dimM=sc.nextInt();
         System.out.println("Ingrese el numero de Inicio:");
         int numInit=sc.nextInt();
-        lea.escribirArchivo(null, lea.transformada01(dimM, numInit), "archivo3.txt");
+        lea.escribirArchivo(null, lea.transformada05(dimM, numInit), "archivo4.txt");
         
     }
     
