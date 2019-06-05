@@ -76,10 +76,49 @@ public class LeerEscribirArchivos {
             String[] urlReal=url.split("target");
             out=new BufferedWriter(new OutputStreamWriter(
                     new FileOutputStream(urlReal[0]+"src/main/resources/"+nameFile),"UTF-8"));
-            out.write("Hola mundo\n");
+            if (head!=null && data!=null) {
+                
+            }else if(head==null && data!=null){
+                for (int i = 0; i < data.length; i++) {
+                    for (int j = 0; j < data[0].length; j++) {
+                        try {
+                            out.write(data[i][j]+"\t");
+                            if (i<data.length-1) {
+                                if(j==data[0].length-1){
+                                out.write("\n");
+                                }
+                            }
+                        } catch (Exception e) {
+                        }
+                    }
+                }
+            }else{
+                System.out.println("Los parametros de entrada estan vacios");
+            }
+            
         } catch (Exception e) {
+        }finally{
+            try {
+                out.close();
+            } catch (Exception e) {
+            }
         }    
     }
+    
+    public int[][] transformada01(int dimensionX, int numInit){
+        int[][] matriz=new int[dimensionX][dimensionX];
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[0].length; j++) {
+                if(j<dimensionX-i){
+                    matriz[i][j]=numInit+(i+j)*(i+j+1)/2+i;
+                }else{
+                matriz[i][j]=-1;
+                }
+            }
+        }        
+    return matriz;
+    }    
+    
     public static void main(String[] args) {
         LeerEscribirArchivos lea=new LeerEscribirArchivos();//Objeto lea
         URL fileUrl=System.class.getResource("/02-exemplo7.txt");
@@ -87,7 +126,12 @@ public class LeerEscribirArchivos {
         System.out.println("Ruta real:"+fileUrl.getFile().replaceAll("%20", " "));
         lea.imprimirMatriz(lea.leerArchivo(new File(fileUrl.getFile().replaceAll("%20", " "))));        
         System.out.println("Escribir Archivos");
-        lea.escribirArchivo(null, null, "archivo.txt");
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Ingree la Dimension de la Matriz:");
+        int dimM=sc.nextInt();
+        System.out.println("Ingrese el numero de Inicio");
+        int numInic=sc.nextInt();        
+        lea.escribirArchivo(null, lea.transformada01(dimM, numInic), "archivo.txt");
     }
     
     
