@@ -19,7 +19,8 @@ import java.util.Scanner;
 public class ConexionDB {
     Connection conxx=null;
     
-    public Connection getConnection() throws SQLException {
+    public Connection getConnection() 
+            throws SQLException {
         DriverManager.registerDriver(new com.mysql.jdbc.Driver());
         if(conxx==null){
         conxx=(Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/registro", "root", "");
@@ -33,7 +34,11 @@ public class ConexionDB {
         PreparedStatement ps=getConnection().prepareStatement("select * from registro_notas");
         ResultSet rs=ps.executeQuery();
         while (rs.next()) {            
-            System.out.println(""+rs.getString("nombre_estudiante"));
+            System.out.println(""+rs.getString("nombre_estudiante")
+                    +"\t"+rs.getString("apellidos_estudiante")
+                    +"\t"+rs.getString("codigo")
+                    +"\t"+rs.getDouble("promedio")
+                    );
         }
     }
     
@@ -66,7 +71,7 @@ public class ConexionDB {
         try {
             conx=con.getConnection();
             con.reportarRegistro();
-            con.insrtarRegistro();
+            //con.insrtarRegistro();
             
         } catch (Exception e) {
             System.out.println("Error :"+e.getMessage());
