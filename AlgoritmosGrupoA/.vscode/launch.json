@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ArraysGrupoA",
+            "request": "launch",
+            "mainClass": "pe.edu.upeu.ArraysGrupoA"
+        }
+    ]
+}
