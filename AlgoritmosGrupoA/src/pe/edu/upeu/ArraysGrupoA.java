@@ -65,7 +65,53 @@ public class ArraysGrupoA {
     return matriz;
     }
     
-    
+    public int[][] trasformada28(int dim, int numInit){
+    int cont=0; int[][] matriz=new int[dim][dim];
+        for (int x =matriz.length-1; x >=0 ; x--) {
+            if(cont%2==0){
+                for (int y = 0; y < matriz[0].length; y++) {
+                    matriz[x][y]=numInit;
+                    numInit++;
+                }
+            }else{
+                for (int y = matriz[0].length-1; y >=0; y--) {
+                    matriz[x][y]=numInit;
+                    numInit++;
+                }
+            }
+            cont++;
+        }    
+        return matriz;
+    }
+   
+    public int[][] trasformada29(int dim, int numInit){
+    int[][] matriz=new int[dim][dim];
+        for (int c = 0; c < dim/2; c++) {
+            for (int lsx = c; lsx < dim-c-1; lsx++) {
+                matriz[c][lsx]=numInit;
+                numInit++;
+            }            
+            for (int ldx = c; ldx < dim-c-1; ldx++) {
+                matriz[ldx][dim-1-c]=numInit;
+                numInit++;                
+            }
+            for (int lix = dim-c-1; lix > c; lix--) {
+                matriz[dim-1-c][lix]=numInit;
+                numInit++;                
+            }
+            for (int lxx = dim-c-1; lxx > c; lxx--) {
+                matriz[lxx][c]=numInit;
+                numInit++;                
+            }
+            
+        }
+        
+        if(dim%2!=0){
+        matriz[dim/2][dim/2]=numInit;
+        }
+        
+        return matriz;
+    }
     
     public void imprimirMatriz(int[][] matriz){
         for (int i = 0; i < matriz.length; i++) {
@@ -88,6 +134,10 @@ public class ArraysGrupoA {
         ag.imprimirMatriz(ag.transformada01(20, 5));
         System.out.println("");
         ag.imprimirMatriz(ag.transformada05(20, 0));
+        System.out.println("---------------");
+        ag.imprimirMatriz(ag.trasformada28(20, 100));
+        System.out.println("***************");
+        ag.imprimirMatriz(ag.trasformada29(6, 0));
         
     }
 }
