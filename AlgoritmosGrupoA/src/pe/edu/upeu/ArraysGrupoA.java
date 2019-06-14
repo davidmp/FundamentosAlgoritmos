@@ -137,7 +137,7 @@ public class ArraysGrupoA {
         System.out.println("---------------");
         ag.imprimirMatriz(ag.trasformada28(20, 100));
         System.out.println("***************");
-        ag.imprimirMatriz(ag.trasformada29(6, 0));
+        ag.imprimirMatriz(ag.trasformada29(10, 0));
         
     }
 }
